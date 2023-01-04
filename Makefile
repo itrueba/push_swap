@@ -1,27 +1,33 @@
-NAME			= push_swap
 
-CC				= gcc
-CFLAGS			= -Wall -Wextra -Werror
-RM				= rm -rf
+NAME		= push_swap
+CC			= gcc
+CFLAGS		= -Wall -Werror -Wextra
+RM			= rm -rf
+LIB			= Libft
 
-SRCS			= push_swap.c ft_isdigit.c
+SRCS	=	$(shell find . -name "*.c")
 
-OBJS			= $(SRCS:.c=.o)
+OBJS	= 	$(SRCS:.c=.o)
 
-all:	$(NAME)
+all:		$(NAME)
 
 %.o: %.c
 		$(CC) $(CFLAGS) -c $< -o $@
 
-$(NAME): $(OBJS)
-			$(CC) -o $@ $^
+$(NAME):	$(OBJS) 
+			@make -C $(LIB)
+			@mv $(LIB)/libft.a $(NAME)
+			$(CC) $(CFLAGS) -o $@ $^
 
 clean:
-		$(RM) $(OBJS) $(BONUS_OBJS)
+			@make -C $(LIB) clean
+			@$(RM) $(OBJS)
 
-fclean:	clean
-		$(RM) $(NAME)
+fclean:		clean
+			@make -C $(LIB) fclean
+			$(RM) $(NAME)
 
-re:		fclean $(NAME)
+re:			fclean all
 
-.PHONY:	all clean fclean re bonus
+.PHONY:		all clean fclean re
+
