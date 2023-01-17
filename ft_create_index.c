@@ -6,7 +6,7 @@
 /*   By: itrueba- <itrueba-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 11:41:47 by itrueba-          #+#    #+#             */
-/*   Updated: 2023/01/17 11:49:13 by itrueba-         ###   ########.fr       */
+/*   Updated: 2023/01/17 11:59:28 by itrueba-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int	*ft_index(int argc, int *input)
 		y = 0;
 		while (y < argc)
 		{
-			if (order[x] == input[y])
+			if (input[x] == order[y])
 				index[x] = y;
 			y++;
 		}
