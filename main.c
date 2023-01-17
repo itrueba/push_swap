@@ -6,17 +6,16 @@
 /*   By: itrueba- <itrueba-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 11:30:53 by itrueba-          #+#    #+#             */
-/*   Updated: 2023/01/17 16:46:08 by itrueba-         ###   ########.fr       */
+/*   Updated: 2023/01/17 18:18:42 by itrueba-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_print(t_push	*push)
+void	ft_print(t_push *push)
 {
 	printf("Argumentos STACK_A: %d \n", push->size_a);
 	printf("Argumentos STACK_B: %d \n", push->size_b);
-
 	while (push->stack_a)
 	{
 		printf("-> %d ", push->stack_a->content);
@@ -33,7 +32,7 @@ void	ft_print(t_push	*push)
 	printf("\n");
 }
 
-t_push *ft_init_push(int argc)
+t_push	*ft_init_push(int argc)
 {
 	t_push	*push;
 
@@ -47,18 +46,22 @@ t_push *ft_init_push(int argc)
 
 int	main(int argc, char **argv)
 {
-	int		*index;
-	int		*input;
-	t_push	*push;
+	int *index;
+	int *input;
+	t_push *push;
 
 	input = ft_check_argv(argc - 1, argv);
 	index = ft_index(argc - 1, input);
 	push = ft_init_push(argc - 1);
-	
 	ft_init(index, push);
-	ft_print(push);
-	ft_sa(push, 1);
-	ft_print(push);
 	free(push);
+	ft_print(push);
+	ft_pb(push);
+	ft_pb(push);
+	ft_pb(push);
+	ft_print(push);	
+	ft_rrr(push);
+	ft_rrr(push);
+	ft_print(push);
 	return (0);
 }

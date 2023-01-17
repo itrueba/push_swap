@@ -6,7 +6,7 @@
 /*   By: itrueba- <itrueba-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 11:47:45 by itrueba-          #+#    #+#             */
-/*   Updated: 2023/01/17 16:42:13 by itrueba-         ###   ########.fr       */
+/*   Updated: 2023/01/17 18:18:53 by itrueba-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,13 @@ void				ft_init(int *index, t_push *push);
 void				ft_sa(t_push *push, int print);
 void				ft_sb(t_push *push, int print);
 void				ft_ss(t_push *push, int print);
+void				ft_pa(t_push *push);
+void				ft_pb(t_push *push);
+void				ft_ra(t_push *push, int print);
+void				ft_rb(t_push *push, int print);
+void				ft_rr(t_push *push);
+void				ft_rra(t_push *push, int print);
+void				ft_rrb(t_push *push, int print);
+void				ft_rrr(t_push *push);
 
 #endif
