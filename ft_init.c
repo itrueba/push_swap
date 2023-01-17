@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lst.c                                           :+:      :+:    :+:   */
+/*   ft_init.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: itrueba- <itrueba-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:03:26 by itrueba-          #+#    #+#             */
-/*   Updated: 2023/01/17 12:26:47 by itrueba-         ###   ########.fr       */
+/*   Updated: 2023/01/17 16:35:24 by itrueba-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,16 +45,18 @@ t_list	*ft_lstnew(int content)
 	return (s_list);
 }
 
-void	ft_init(int argc, int *index, t_list **stack_a)
+void	ft_init(int *index, t_push *push)
 {
 	t_list	*new;
 	int		count;
 
 	count = 0;
-	while (count < argc)
+	while (count < push->size_a)
 	{
 		new = ft_lstnew(index[count]);
-		ft_lstadd_back(stack_a, new);
+		ft_lstadd_back(&push->stack_a, new);
 		count++;
 	}
+	push->head_a = push->stack_a;
+	free(index);
 }

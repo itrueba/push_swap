@@ -6,7 +6,7 @@
 /*   By: itrueba- <itrueba-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 11:47:45 by itrueba-          #+#    #+#             */
-/*   Updated: 2023/01/17 12:27:15 by itrueba-         ###   ########.fr       */
+/*   Updated: 2023/01/17 16:42:13 by itrueba-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,21 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-void	ft_check_argv(int argc, char **argv, int *input);
-int		*ft_index(int argc, int *input);
-void	ft_init(int argc, int *index, t_list **stack_a);
+typedef struct s_push
+{
+	int				size_a;
+	int				size_b;
+	struct s_list	*head_a;
+	struct s_list	*head_b;
+	struct s_list	*stack_a;
+	struct s_list	*stack_b;
+}					t_push;
+
+int					*ft_check_argv(int argc, char **argv);
+int					*ft_index(int argc, int *input);
+void				ft_init(int *index, t_push *push);
+void				ft_sa(t_push *push, int print);
+void				ft_sb(t_push *push, int print);
+void				ft_ss(t_push *push, int print);
+
 #endif

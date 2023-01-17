@@ -6,7 +6,7 @@
 /*   By: itrueba- <itrueba-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 11:41:47 by itrueba-          #+#    #+#             */
-/*   Updated: 2023/01/17 11:48:58 by itrueba-         ###   ########.fr       */
+/*   Updated: 2023/01/17 16:43:13 by itrueba-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,11 +61,13 @@ void	ft_input_zero(int *input, int len)
 	}
 }
 
-void	ft_check_argv(int argc, char **argv, int *input)
+int	*ft_check_argv(int argc, char **argv)
 {
 	int	count;
 	int	nbr;
+	int	*input;
 
+	input = ft_calloc(sizeof(int), argc);
 	count = 0;
 	while (count < argc)
 	{
@@ -77,4 +79,5 @@ void	ft_check_argv(int argc, char **argv, int *input)
 		count++;
 	}
 	ft_input_zero(input, argc);
+	return (input);
 }

@@ -6,41 +6,59 @@
 /*   By: itrueba- <itrueba-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 11:30:53 by itrueba-          #+#    #+#             */
-/*   Updated: 2023/01/17 12:29:11 by itrueba-         ###   ########.fr       */
+/*   Updated: 2023/01/17 16:46:08 by itrueba-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_print(int argc, int *index)
+void	ft_print(t_push	*push)
 {
-	int	c;
+	printf("Argumentos STACK_A: %d \n", push->size_a);
+	printf("Argumentos STACK_B: %d \n", push->size_b);
 
-	c = 0;
-	while (c < argc)
+	while (push->stack_a)
 	{
-		printf("%d  ", index[c]);
-		c++;
+		printf("-> %d ", push->stack_a->content);
+		push->stack_a = push->stack_a->next;
 	}
+	push->stack_a = push->head_a;
+	printf("\n");
+	while (push->stack_b)
+	{
+		printf("-> %d ", push->stack_b->content);
+		push->stack_b = push->stack_b->next;
+	}
+	push->stack_b = push->head_b;
+	printf("\n");
 }
 
+t_push *ft_init_push(int argc)
+{
+	t_push	*push;
 
+	push = malloc(sizeof(t_push));
+	push->stack_a = NULL;
+	push->stack_b = NULL;
+	push->size_a = argc;
+	push->size_b = 0;
+	return (push);
+}
 
 int	main(int argc, char **argv)
 {
 	int		*index;
 	int		*input;
-	t_list	*stack_a;
+	t_push	*push;
 
-	argc -= 1;
-	input = ft_calloc(sizeof(int), argc);
-	ft_check_argv(argc, argv, input);
-	index = ft_index(argc, input);
-	ft_init(argc, index, &stack_a);
-	while (stack_a)
-	{
-		printf("-> %d ", stack_a->content);
-		stack_a = stack_a->next;
-	}
+	input = ft_check_argv(argc - 1, argv);
+	index = ft_index(argc - 1, input);
+	push = ft_init_push(argc - 1);
+	
+	ft_init(index, push);
+	ft_print(push);
+	ft_sa(push, 1);
+	ft_print(push);
+	free(push);
 	return (0);
 }
