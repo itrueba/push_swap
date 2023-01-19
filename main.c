@@ -6,11 +6,29 @@
 /*   By: itrueba- <itrueba-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 11:30:53 by itrueba-          #+#    #+#             */
-/*   Updated: 2023/01/19 13:38:59 by itrueba-         ###   ########.fr       */
+/*   Updated: 2023/01/19 14:02:56 by itrueba-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int ft_correct(t_push *push)
+{
+	int counter;
+
+		
+	counter = 0;
+	while (push->stack_a)
+	{
+		if (counter != push->stack_a->content)
+			return(0);
+		counter++;
+		push->stack_a = push->stack_a->next;
+	}
+	push->stack_a = push->head_a;
+	exit (1);
+	return (1);
+}
 
 void	ft_print(t_push *push)
 {
@@ -72,7 +90,7 @@ void ft_radix(t_push *push, int bit)
 	}
 	while (count--)
 		ft_pa(push);
-
+	ft_correct(push);		
 	if (bit <= push->bit_size)
 	{
 		bit++;
