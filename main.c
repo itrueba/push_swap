@@ -6,7 +6,7 @@
 /*   By: itrueba- <itrueba-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 11:30:53 by itrueba-          #+#    #+#             */
-/*   Updated: 2023/01/17 18:18:42 by itrueba-         ###   ########.fr       */
+/*   Updated: 2023/01/19 13:38:59 by itrueba-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,28 @@
 
 void	ft_print(t_push *push)
 {
-	printf("Argumentos STACK_A: %d \n", push->size_a);
-	printf("Argumentos STACK_B: %d \n", push->size_b);
-	while (push->stack_a)
+	while (push->stack_a || push->stack_b)
 	{
-		printf("-> %d ", push->stack_a->content);
-		push->stack_a = push->stack_a->next;
+		if (push->stack_a)
+		{
+			printf("%d -", push->stack_a->content);
+			push->stack_a = push->stack_a->next;
+		}
+		else
+		{
+			printf("  -");
+		}
+		if (push->stack_b)
+		{
+			printf(" %d", push->stack_b->content);
+			push->stack_b = push->stack_b->next;
+		}
+		printf("\n");
 	}
 	push->stack_a = push->head_a;
-	printf("\n");
-	while (push->stack_b)
-	{
-		printf("-> %d ", push->stack_b->content);
-		push->stack_b = push->stack_b->next;
-	}
 	push->stack_b = push->head_b;
-	printf("\n");
+	printf("A - B\n");
+	printf("%d - %d\n", push->size_a, push->size_b);
 }
 
 t_push	*ft_init_push(int argc)
@@ -41,27 +47,50 @@ t_push	*ft_init_push(int argc)
 	push->stack_b = NULL;
 	push->size_a = argc;
 	push->size_b = 0;
+	push->bit_size = argc>>1;
+	push->head_b = NULL;
 	return (push);
+}
+
+void ft_radix(t_push *push, int bit)
+{
+	int	size;
+	int	count;
+
+	size = 0;
+	count = 0;
+	while (size <= push->size_a)
+	{
+		if (((push->stack_a->content)>>bit&1) == 0)
+		{
+			ft_pb(push);
+			count++;
+		}	
+		else
+			ft_ra(push, 1);
+		size++;
+	}
+	while (count--)
+		ft_pa(push);
+
+	if (bit <= push->bit_size)
+	{
+		bit++;
+		ft_radix(push, bit);
+	}
 }
 
 int	main(int argc, char **argv)
 {
-	int *index;
-	int *input;
-	t_push *push;
+	int		*index;
+	int		*input;
+	t_push	*push;
 
 	input = ft_check_argv(argc - 1, argv);
 	index = ft_index(argc - 1, input);
 	push = ft_init_push(argc - 1);
 	ft_init(index, push);
+	ft_radix(push, 0);
 	free(push);
-	ft_print(push);
-	ft_pb(push);
-	ft_pb(push);
-	ft_pb(push);
-	ft_print(push);	
-	ft_rrr(push);
-	ft_rrr(push);
-	ft_print(push);
 	return (0);
 }
