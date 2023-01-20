@@ -6,7 +6,7 @@
 /*   By: itrueba- <itrueba-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 11:47:45 by itrueba-          #+#    #+#             */
-/*   Updated: 2023/01/19 13:26:39 by itrueba-         ###   ########.fr       */
+/*   Updated: 2023/01/20 09:13:13 by itrueba-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ typedef struct s_push
 {
 	int				size_a;
 	int				size_b;
-	int 			bit_size;
+	int				bit_size;
 	struct s_list	*head_a;
 	struct s_list	*head_b;
 	struct s_list	*stack_a;
@@ -43,5 +43,7 @@ void				ft_rr(t_push *push);
 void				ft_rra(t_push *push, int print);
 void				ft_rrb(t_push *push, int print);
 void				ft_rrr(t_push *push);
+void				ft_init(int *index, t_push *push);
+t_push				*ft_init_push(int argc);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: itrueba- <itrueba-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:03:26 by itrueba-          #+#    #+#             */
-/*   Updated: 2023/01/19 12:18:04 by itrueba-         ###   ########.fr       */
+/*   Updated: 2023/01/20 09:14:17 by itrueba-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,20 +63,4 @@ t_list	*ft_lstnew(int content)
 	s_list->content = content;
 	s_list->next = NULL;
 	return (s_list);
-}
-
-void	ft_init(int *index, t_push *push)
-{
-	t_list	*new;
-	int		count;
-
-	count = 0;
-	while (count < push->size_a)
-	{
-		new = ft_lstnew(index[count]);
-		ft_lstadd_back(&push->stack_a, new);
-		count++;
-	}
-	push->head_a = push->stack_a;
-	free(index);
 }
