@@ -6,7 +6,7 @@
 /*   By: itrueba- <itrueba-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 11:41:47 by itrueba-          #+#    #+#             */
-/*   Updated: 2023/01/17 17:02:59 by itrueba-         ###   ########.fr       */
+/*   Updated: 2023/01/20 11:00:45 by itrueba-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_error(int *input)
 {
-	printf("Error.");
+	write(1, "Error\n", 6);
 	free(input);
 	exit(0);
 }

@@ -6,7 +6,7 @@
 /*   By: itrueba- <itrueba-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 10:09:34 by itrueba-          #+#    #+#             */
-/*   Updated: 2023/01/20 10:10:19 by itrueba-         ###   ########.fr       */
+/*   Updated: 2023/01/20 11:26:18 by itrueba-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,11 +48,50 @@ void	ft_radix_b(t_push *push, int bit)
 	}
 }
 
+void	ft_correct_b(t_push *push)
+{
+	int	counter;
+
+	counter = push->stack_b->content;
+	while (push->stack_b)
+	{
+		if (counter != push->stack_b->content)
+		{
+			push->stack_b = push->head_b;
+			return ;
+		}
+		counter--;
+		push->stack_b = push->stack_b->next;
+	}
+	push->stack_b = push->head_b;
+	while (push->stack_b)
+		ft_pa(push);
+	exit(0);
+}
+
+void	ft_correct_a(t_push *push)
+{
+	int	counter;
+
+	counter = push->stack_a->content;
+	while (push->stack_a)
+	{
+		if (counter != push->stack_a->content)
+		{
+			push->stack_a = push->head_a;
+			return ;
+		}
+		counter++;
+		push->stack_a = push->stack_a->next;
+	}
+	push->stack_a = push->head_a;
+	ft_correct_b(push);
+}
+
 void	ft_radix(t_push *push, int bit)
 {
-	if (push->size_a == push->total_size)
-		ft_correct(push);
 	ft_radix_a(push, bit);
+	ft_correct_a(push);
 	ft_radix_b(push, bit + 1);
 	if (bit < push->bit_size)
 	{
