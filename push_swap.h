@@ -6,7 +6,7 @@
 /*   By: itrueba- <itrueba-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 11:47:45 by itrueba-          #+#    #+#             */
-/*   Updated: 2023/01/20 09:13:13 by itrueba-         ###   ########.fr       */
+/*   Updated: 2023/01/20 09:30:01 by itrueba-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ typedef struct s_push
 {
 	int				size_a;
 	int				size_b;
+	int				total_size;
 	int				bit_size;
 	struct s_list	*head_a;
 	struct s_list	*head_b;
