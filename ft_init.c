@@ -6,7 +6,7 @@
 /*   By: itrueba- <itrueba-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 09:11:54 by itrueba-          #+#    #+#             */
-/*   Updated: 2023/01/20 09:31:27 by itrueba-         ###   ########.fr       */
+/*   Updated: 2023/01/20 10:10:36 by itrueba-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ t_push	*ft_init_push(int argc)
 	push->stack_b = NULL;
 	push->size_a = argc;
 	push->size_b = 0;
-	push->total_size= argc;
+	push->total_size = argc;
 	push->bit_size = argc >> 1;
 	push->head_b = NULL;
 	return (push);

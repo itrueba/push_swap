@@ -6,7 +6,7 @@
 /*   By: itrueba- <itrueba-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 11:30:53 by itrueba-          #+#    #+#             */
-/*   Updated: 2023/01/20 09:38:21 by itrueba-         ###   ########.fr       */
+/*   Updated: 2023/01/20 10:10:25 by itrueba-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,36 +55,6 @@ void	ft_print(t_push *push)
 	push->stack_b = push->head_b;
 	printf("A - B\n");
 	printf("%d - %d\n", push->size_a, push->size_b);
-}
-
-void	ft_radix(t_push *push, int bit)
-{
-	int	size;
-	int	count;
-
-	size = 0;
-	count = 0;
-	ft_print(push);
-	ft_correct(push);
-	while (size < push->total_size)
-	{
-		if (((push->stack_a->content) >> bit & 1) == 0)
-		{
-			ft_pb(push);
-			count++;
-		}
-		else
-			ft_ra(push, 1);
-		size++;
-	}
-	ft_print(push);
-	while (count--)
-		ft_pa(push);
-	if (bit < push->bit_size)
-	{
-		bit++;
-		ft_radix(push, bit);
-	}
 }
 
 int	main(int argc, char **argv)
