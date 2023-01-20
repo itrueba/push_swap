@@ -6,7 +6,7 @@
 /*   By: itrueba- <itrueba-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 11:47:45 by itrueba-          #+#    #+#             */
-/*   Updated: 2023/01/20 10:10:10 by itrueba-         ###   ########.fr       */
+/*   Updated: 2023/01/20 10:53:52 by itrueba-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,5 @@ void				ft_rrr(t_push *push);
 void				ft_init(int *index, t_push *push);
 t_push				*ft_init_push(int argc);
 void				ft_radix(t_push *push, int bit);
+void				ft_correct(t_push *push);
 #endif
