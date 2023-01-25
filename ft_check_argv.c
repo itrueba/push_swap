@@ -6,7 +6,7 @@
 /*   By: itrueba- <itrueba-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 11:41:47 by itrueba-          #+#    #+#             */
-/*   Updated: 2023/01/20 13:57:58 by itrueba-         ###   ########.fr       */
+/*   Updated: 2023/01/25 12:22:35 by itrueba-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,27 +68,12 @@ int	*ft_check_argv(int argc, char **argv)
 	int	*input;
 
 	count = 0;
-	
-	if (argc == 1)
-	{
-		argc = ft_count_size(argv[1], ' ');
-		
-		argv = ft_split(argv[0], ' ');
-	}
-	printf("%s\n",argv[0]);
-	printf("%s\n",argv[1]);
-	printf("%s\n",argv[2]);
-	printf("%s\n",argv[3]);
-	printf("%s\n",argv[4]);
-	printf("%s\n",argv[5]);
-	printf("%d\n",argc);
-	
 	input = ft_calloc(sizeof(int), argc);
 	while (count < argc)
 	{
-		nbr = ft_atoi(argv[count + 1]);
+		nbr = ft_atoi(argv[count]);
 		if (nbr == 0)
-			ft_all_zero(argv[count + 1], input);
+			ft_all_zero(argv[count], input);
 		ft_duplicate_nbr(input, nbr, argc);
 		input[count] = nbr;
 		count++;

@@ -15,8 +15,8 @@ all:		$(NAME)
 		$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME):	$(OBJS) 
-			@make -C $(LIB)
-			@mv $(LIB)/libft.a $(NAME)
+			make -C $(LIB)
+			mv $(LIB)/libft.a $(NAME)
 			$(CC) $(CFLAGS) -o $@ $^
 
 clean:
@@ -25,7 +25,7 @@ clean:
 
 fclean:		clean
 			@make -C $(LIB) fclean
-			$(RM) $(NAME)
+			@$(RM) $(NAME)
 
 re:			fclean all
 
