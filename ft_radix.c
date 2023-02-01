@@ -6,7 +6,7 @@
 /*   By: itrueba- <itrueba-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 10:09:34 by itrueba-          #+#    #+#             */
-/*   Updated: 2023/01/20 12:56:45 by itrueba-         ###   ########.fr       */
+/*   Updated: 2023/02/01 16:14:17 by itrueba-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,7 @@ void	ft_radix_a(t_push *push, int bit)
 	while (size++ < sa)
 	{
 		if (((push->stack_a->content) >> bit & 1) == 0)
-		{
 			ft_pb(push);
-		}
 		else
 			ft_ra(push, 1);
 	}
@@ -40,9 +38,7 @@ void	ft_radix_b(t_push *push, int bit)
 	while (size++ < sb)
 	{
 		if (((push->stack_b->content) >> bit & 1) == 0 && bit < push->bit_size)
-		{
 			ft_rb(push, 1);
-		}
 		else
 			ft_pa(push);
 	}
