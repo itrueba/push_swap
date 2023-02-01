@@ -6,7 +6,7 @@
 /*   By: itrueba- <itrueba-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 11:08:55 by itrueba-          #+#    #+#             */
-/*   Updated: 2023/01/20 13:40:08 by itrueba-         ###   ########.fr       */
+/*   Updated: 2023/02/01 19:02:14 by itrueba-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,7 @@ char				*ft_substr(char const *s, unsigned int start, size_t len);
 char				*ft_strdup(const char *s);
 size_t				ft_strlen(const char *s);
 int					ft_count_size(char const *s, char c);
+char				*ft_itoa(int nb);
+int					ft_strncmp(char *s1, char *s2, size_t n);
 
 #endif

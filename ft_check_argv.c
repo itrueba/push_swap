@@ -6,7 +6,7 @@
 /*   By: itrueba- <itrueba-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 11:41:47 by itrueba-          #+#    #+#             */
-/*   Updated: 2023/01/25 12:22:35 by itrueba-         ###   ########.fr       */
+/*   Updated: 2023/02/01 19:02:36 by itrueba-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ int	*ft_check_argv(int argc, char **argv)
 {
 	int	count;
 	int	nbr;
+	char *c_nbr;
 	int	*input;
 
 	count = 0;
@@ -72,6 +73,9 @@ int	*ft_check_argv(int argc, char **argv)
 	while (count < argc)
 	{
 		nbr = ft_atoi(argv[count]);
+		c_nbr = ft_itoa(nbr);
+		if (ft_strncmp(c_nbr, argv[count], ft_strlen(argv[count])))
+			ft_error(input);
 		if (nbr == 0)
 			ft_all_zero(argv[count], input);
 		ft_duplicate_nbr(input, nbr, argc);
