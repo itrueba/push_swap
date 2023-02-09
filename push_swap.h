@@ -6,7 +6,7 @@
 /*   By: itrueba- <itrueba-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 11:47:45 by itrueba-          #+#    #+#             */
-/*   Updated: 2023/02/01 16:30:39 by itrueba-         ###   ########.fr       */
+/*   Updated: 2023/02/02 11:54:24 by itrueba-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,11 @@ t_push				*ft_init_push(int argc);
 void				ft_radix(t_push *push, int bit);
 void				ft_correct(t_push *push);
 void				ft_print(t_push *push);
-void				ft_small_radix(t_push *push, int bit);
+void				ft_small_radix(t_push *push);
+void				ft_small_radix_3(t_push *push);
+void				ft_small_radix_4(t_push *push);
+void				ft_small_radix_5(t_push *push);
+int					ft_counter(t_push *push);
+void				ft_correct_a(t_push *push);
 
 #endif

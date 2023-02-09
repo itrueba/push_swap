@@ -6,7 +6,7 @@
 /*   By: itrueba- <itrueba-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 11:41:47 by itrueba-          #+#    #+#             */
-/*   Updated: 2023/02/01 19:02:36 by itrueba-         ###   ########.fr       */
+/*   Updated: 2023/02/02 09:36:08 by itrueba-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,10 @@ void	ft_input_zero(int *input, int len)
 
 int	*ft_check_argv(int argc, char **argv)
 {
-	int	count;
-	int	nbr;
-	char *c_nbr;
-	int	*input;
+	int		count;
+	int		nbr;
+	char	*c_nbr;
+	int		*input;
 
 	count = 0;
 	input = ft_calloc(sizeof(int), argc);
