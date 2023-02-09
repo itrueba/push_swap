@@ -6,16 +6,11 @@
 /*   By: itrueba- <itrueba-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 10:05:57 by itrueba-          #+#    #+#             */
-/*   Updated: 2023/02/02 11:58:26 by itrueba-         ###   ########.fr       */
+/*   Updated: 2023/02/09 08:28:48 by itrueba-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	ft_small_radix_5_0(t_push *push)
-{
-	ft_pb(push);
-}
 
 void	ft_small_radix_5_1(t_push *push)
 {
@@ -37,6 +32,7 @@ void	ft_small_radix_5_3(t_push *push)
 	ft_rra(push, 1);
 	ft_pb(push);
 }
+
 void	ft_small_radix_5_4(t_push *push)
 {
 	ft_rra(push, 1);
@@ -49,7 +45,7 @@ void	ft_small_radix_5(t_push *push)
 
 	count = ft_counter(push);
 	if (count == 0)
-		ft_small_radix_5_0(push);
+		ft_pb(push);
 	if (count == 1)
 		ft_small_radix_5_1(push);
 	if (count == 2)
