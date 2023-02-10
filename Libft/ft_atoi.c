@@ -6,16 +6,16 @@
 /*   By: itrueba- <itrueba-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 09:22:15 by itrueba-          #+#    #+#             */
-/*   Updated: 2023/01/04 13:22:42 by itrueba-         ###   ########.fr       */
+/*   Updated: 2023/02/10 12:08:22 by itrueba-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+long long int	ft_atoi(const char *nptr)
 {
-	int	sign;
-	int	result;
+	int				sign;
+	long long int	result;
 
 	sign = 1;
 	result = 0;

@@ -6,7 +6,7 @@
 /*   By: itrueba- <itrueba-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 11:30:53 by itrueba-          #+#    #+#             */
-/*   Updated: 2023/02/10 09:49:52 by itrueba-         ###   ########.fr       */
+/*   Updated: 2023/02/10 11:33:53 by itrueba-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	main(int argc, char **argv)
 	push = ft_init_push(argc - 1);
 	ft_init(index, push);
 	ft_correct_a(push);
-	if (push->total_size > 7)
+	if (push->total_size > 5)
 		ft_radix(push, 0);
 	ft_small_radix(push);
 	return (0);

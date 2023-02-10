@@ -6,7 +6,7 @@
 /*   By: itrueba- <itrueba-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 11:41:47 by itrueba-          #+#    #+#             */
-/*   Updated: 2023/02/02 09:36:08 by itrueba-         ###   ########.fr       */
+/*   Updated: 2023/02/10 12:12:45 by itrueba-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,18 +63,18 @@ void	ft_input_zero(int *input, int len)
 
 int	*ft_check_argv(int argc, char **argv)
 {
-	int		count;
-	int		nbr;
-	char	*c_nbr;
-	int		*input;
+	int				count;
+	long long int	nbr;
+	int				*input;
 
 	count = 0;
 	input = ft_calloc(sizeof(int), argc);
+	if (argc == 0)
+		ft_error(input);
 	while (count < argc)
 	{
 		nbr = ft_atoi(argv[count]);
-		c_nbr = ft_itoa(nbr);
-		if (ft_strncmp(c_nbr, argv[count], ft_strlen(argv[count])))
+		if (nbr > 2147483647 || nbr < -2147483648)
 			ft_error(input);
 		if (nbr == 0)
 			ft_all_zero(argv[count], input);

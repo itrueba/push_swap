@@ -6,7 +6,7 @@
 /*   By: itrueba- <itrueba-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 09:29:11 by itrueba-          #+#    #+#             */
-/*   Updated: 2023/02/02 09:35:47 by itrueba-         ###   ########.fr       */
+/*   Updated: 2023/02/10 12:14:14 by itrueba-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,14 @@
 
 void	ft_finish(t_push *push)
 {
+	t_list	*temp;
+
+	while (push->stack_a)
+	{
+		temp = push->stack_a->next;
+		free(push->stack_a);
+		push->stack_a = temp;
+	}
 	free(push);
 	exit(0);
 }

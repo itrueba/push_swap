@@ -6,7 +6,7 @@
 /*   By: itrueba- <itrueba-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 16:28:17 by itrueba-          #+#    #+#             */
-/*   Updated: 2023/02/10 09:54:40 by itrueba-         ###   ########.fr       */
+/*   Updated: 2023/02/10 12:18:49 by itrueba-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,14 +74,16 @@ void	ft_small_radix(t_push *push)
 	counter = push->total_size;
 	if (push->total_size > 3)
 	{
-		while (counter)
+		while (counter > 3)
 		{
 			ft_small_radix_pb(push, counter);
 			counter--;
 		}
+		ft_radix_3(push);
 	}
 	if (push->total_size == 3)
 		ft_radix_3(push);
 	if (push->total_size == 2)
 		ft_sa(push, 1);
+	ft_correct_a(push);
 }
