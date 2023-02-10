@@ -6,7 +6,7 @@
 /*   By: itrueba- <itrueba-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 13:22:48 by itrueba-          #+#    #+#             */
-/*   Updated: 2023/01/20 09:09:21 by itrueba-         ###   ########.fr       */
+/*   Updated: 2023/02/10 08:27:08 by itrueba-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,9 @@ void	ft_sb(t_push *push, int print)
 		write(1, "sb\n", 3);
 }
 
-void	ft_ss(t_push *push, int print)
+void	ft_ss(t_push *push)
 {
 	ft_sa(push, 0);
 	ft_sb(push, 0);
-	if (print)
-		write(1, "ss\n", 3);
+	write(1, "ss\n", 3);
 }
